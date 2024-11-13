@@ -1,4 +1,6 @@
-# Task Manager Application
+# Task Manager Application 
+
+**Live Demo**: https://task-manager-jobtask-flarelink.netlify.app/
 
 ## Overview
 
@@ -30,7 +32,7 @@ Before running this application, make sure you have the following installed on y
     ```
 2. **Navigate to the project directory**:
     ```sh
-    cd hiring-staff
+    cd task-manager-jobTask-FLARELINK
     ```
 3. **Install project dependencies**:
 
@@ -98,4 +100,4 @@ We welcome contributions! If you'd like to improve the application, please follo
 For any inquiries, please reach out to:
 
 - **Email**: mdkawserferdoussafi@gmail.com
-- **GitHub**: https://github.com/dev-kawser
+- **Linkedin**: https://www.linkedin.com/in/kawser-ferdous-safi/
