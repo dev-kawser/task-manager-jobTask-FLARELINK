@@ -1,26 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import Button from './shared/Button';
 
 const AddTaskForm = () => {
+
     const [task, setTask] = useState('');
     const [tasks, setTasks] = useState([]);
 
+    // Get Tasks From Local Storage
+    useEffect(() => {
+        const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        setTasks(savedTasks);
+    }, []);
+
+
+    // Add Task On Local Storage
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }, [tasks]);
+
+    // Add Task On Form Submission
     const handleAddTask = () => {
         if (task === '') {
             toast.error('Task title cannot be empty');
             return;
-        };
+        }
 
-        const newTask = { id: Date.now(), title: task.trim(), completed: false };
+        const newTask = { id: Date.now(), title: task, completed: false };
         setTasks([...tasks, newTask]);
         setTask('');
         toast.success('Task Added Successfully');
     };
 
+    // Delete Task
     const handleDeleteTask = (id) => {
-        setTasks(tasks.filter((task) => task.id !== id));
-        toast.success('Task Deleted successfully');
+        const updatedTasks = tasks.filter((task) => task.id !== id);
+        setTasks(updatedTasks);
+        toast.success('Task Deleted Successfully');
     };
 
     return (
@@ -36,7 +52,7 @@ const AddTaskForm = () => {
                     onChange={(e) => setTask(e.target.value)}
                 />
                 <Button
-                    title={"Add"}
+                    title="Add"
                     onClick={handleAddTask}
                     className="bg-blue-500 text-white hover:bg-blue-600"
                 />
@@ -50,7 +66,7 @@ const AddTaskForm = () => {
                     >
                         <span className="text-gray-800">{task.title}</span>
                         <Button
-                            title={"Delete"}
+                            title="Delete"
                             onClick={() => handleDeleteTask(task.id)}
                             className="bg-red-500 hover:bg-red-700 text-white"
                         />
