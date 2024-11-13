@@ -11,17 +11,8 @@ const Navbar = () => {
                         <h1 className="text-2xl font-bold">Task Manager</h1>
                     </div>
                     <div className="hidden md:flex space-x-4">
-                        <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded-md">
+                        <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded font-semibold">
                             Home
-                        </a>
-                        <a href="#features" className="hover:bg-gray-700 px-3 py-2 rounded-md">
-                            Features
-                        </a>
-                        <a href="#about" className="hover:bg-gray-700 px-3 py-2 rounded-md">
-                            About
-                        </a>
-                        <a href="#contact" className="hover:bg-gray-700 px-3 py-2 rounded-md">
-                            Contact
                         </a>
                     </div>
                     <div className="md:hidden">
@@ -62,15 +53,6 @@ const Navbar = () => {
                 <div className="md:hidden bg-gray-800">
                     <a href="#home" className="block px-4 py-2 hover:bg-gray-700">
                         Home
-                    </a>
-                    <a href="#features" className="block px-4 py-2 hover:bg-gray-700">
-                        Features
-                    </a>
-                    <a href="#about" className="block px-4 py-2 hover:bg-gray-700">
-                        About
-                    </a>
-                    <a href="#contact" className="block px-4 py-2 hover:bg-gray-700">
-                        Contact
                     </a>
                 </div>
             )}
