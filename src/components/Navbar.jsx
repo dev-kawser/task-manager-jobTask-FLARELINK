@@ -14,6 +14,15 @@ const Navbar = () => {
                         <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded font-semibold">
                             Home
                         </a>
+                        <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded font-semibold">
+                            Home
+                        </a>
+                        <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded font-semibold">
+                            Home
+                        </a>
+                        <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded font-semibold">
+                            Home
+                        </a>
                     </div>
                     <div className="md:hidden">
                         <button
@@ -51,6 +60,15 @@ const Navbar = () => {
 
             {isOpen && (
                 <div className="md:hidden bg-gray-800">
+                    <a href="#home" className="block px-4 py-2 hover:bg-gray-700">
+                        Home
+                    </a>
+                    <a href="#home" className="block px-4 py-2 hover:bg-gray-700">
+                        Home
+                    </a>
+                    <a href="#home" className="block px-4 py-2 hover:bg-gray-700">
+                        Home
+                    </a>
                     <a href="#home" className="block px-4 py-2 hover:bg-gray-700">
                         Home
                     </a>

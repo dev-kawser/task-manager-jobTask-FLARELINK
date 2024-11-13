@@ -4,22 +4,22 @@ import Button from "./shared/Button";
 const TaskItem = ({ task, onDeleteTask, onToggleCompletion }) => {
     return (
         <li
-            className={`flex justify-between items-center bg-gray-100 p-3 mb-3 rounded-lg shadow-sm ${task?.completed ? 'line-through text-gray-500' : ''
-                }`}
+            className={`flex justify-between items-center p-4 mb-3 rounded-lg shadow-sm transition 
+            ${task.completed ? 'bg-gray-200 line-through text-gray-600' : 'bg-white'}`}
         >
-            <div>
+            <div className="flex items-center">
                 <input
                     type="checkbox"
                     checked={task?.completed}
-                    onChange={() => onToggleCompletion(task.id)}
-                    className="mr-2"
+                    onChange={() => onToggleCompletion(task?.id)}
+                    className="mr-3"
                 />
-                <span>{task?.title} - {task?.priority || "None"}</span>
+                <span>{task?.title} - {task?.priority}</span>
             </div>
             <Button
                 title="Delete"
                 onClick={() => onDeleteTask(task?.id)}
-                className="bg-red-500 hover:bg-red-700 text-white"
+                className="bg-red-500 hover:bg-red-600 text-white"
             />
         </li>
     );
