@@ -1,11 +1,16 @@
+import AddTaskForm from "./components/AddTaskForm";
+import Navbar from "./components/Navbar";
 
-function App() {
 
+const App = () => {
   return (
     <div>
-      
+      <Navbar />
+      <main>
+        <AddTaskForm />
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
