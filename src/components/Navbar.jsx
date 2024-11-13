@@ -1,27 +1,34 @@
 import { useState } from 'react';
 
 const Navbar = () => {
+
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="bg-gray-800 text-white">
+        <nav className="bg-gray-800 text-white sticky top-0 z-50">
             <div className="container">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <h1 className="text-2xl font-bold">Task Manager</h1>
+                        <h1
+                            data-aos="slide-right"
+                            data-aos-duration="600"
+                            className="text-2xl font-bold">Task Manager</h1>
                     </div>
-                    <div className="hidden md:flex space-x-4">
+                    <div
+                        data-aos="slide-left"
+                        data-aos-duration="600"
+                        className="hidden md:flex space-x-4">
                         <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded font-semibold">
                             Home
                         </a>
                         <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded font-semibold">
-                            Home
+                            Features
                         </a>
                         <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded font-semibold">
-                            Home
+                            About Us
                         </a>
                         <a href="#home" className="hover:bg-gray-700 px-3 py-2 rounded font-semibold">
-                            Home
+                            Contact
                         </a>
                     </div>
                     <div className="md:hidden">
@@ -59,18 +66,18 @@ const Navbar = () => {
             </div>
 
             {isOpen && (
-                <div className="md:hidden bg-gray-800">
+                <div className="md:hidden bg-gray-800 pb-3">
                     <a href="#home" className="block px-4 py-2 hover:bg-gray-700">
                         Home
                     </a>
                     <a href="#home" className="block px-4 py-2 hover:bg-gray-700">
-                        Home
+                        Features
                     </a>
                     <a href="#home" className="block px-4 py-2 hover:bg-gray-700">
-                        Home
+                        About Us
                     </a>
                     <a href="#home" className="block px-4 py-2 hover:bg-gray-700">
-                        Home
+                        Contact
                     </a>
                 </div>
             )}
