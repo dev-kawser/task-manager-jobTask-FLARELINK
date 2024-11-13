@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import Button from './shared/Button';
 
 const AddTaskForm = () => {
     const [task, setTask] = useState('');
@@ -11,18 +12,19 @@ const AddTaskForm = () => {
             return;
         };
 
-        const newTask = { id: Date.now(), title: task, completed: false };
+        const newTask = { id: Date.now(), title: task.trim(), completed: false };
         setTasks([...tasks, newTask]);
         setTask('');
+        toast.success('Task Added Successfully');
     };
 
     const handleDeleteTask = (id) => {
         setTasks(tasks.filter((task) => task.id !== id));
+        toast.success('Task Deleted successfully');
     };
 
-
     return (
-        <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+        <div className="max-w-xl mx-2 md:mx-auto lg:mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Add a New Task</h2>
 
             <div className="flex items-center gap-3">
@@ -33,27 +35,25 @@ const AddTaskForm = () => {
                     value={task}
                     onChange={(e) => setTask(e.target.value)}
                 />
-                <button
+                <Button
+                    title={"Add"}
                     onClick={handleAddTask}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-                >
-                    Add Task
-                </button>
+                    className="bg-blue-500 text-white hover:bg-blue-600"
+                />
             </div>
 
-            <ul className="mt-6">
+            <ul className="mt-6 overflow-y-auto max-h-[400px]">
                 {tasks.map((task) => (
                     <li
                         key={task.id}
                         className="flex justify-between items-center bg-gray-100 p-3 mb-3 rounded-lg shadow-sm"
                     >
                         <span className="text-gray-800">{task.title}</span>
-                        <button
+                        <Button
+                            title={"Delete"}
                             onClick={() => handleDeleteTask(task.id)}
-                            className="text-red-500 hover:text-red-700"
-                        >
-                            Delete
-                        </button>
+                            className="bg-red-500 hover:bg-red-700 text-white"
+                        />
                     </li>
                 ))}
             </ul>
